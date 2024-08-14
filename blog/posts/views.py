@@ -1,11 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
 def post_detail(request):
-    return HttpResponse("<h1>Home</h1>")
+    context = {
+        "title": "detail"
+    }
+    return render(request, "index.html", context)
 
 def post_list(request):
-    return HttpResponse("<h1>Post list</h1>")
+    queryset = Post.objects.all()
+    context = {
+        "object_list": queryset,
+        "title": "list"
+    }
+    return render(request, "index.html", context)
 
 def post_add(request):
     return HttpResponse("<h1>Add post</h1>")
