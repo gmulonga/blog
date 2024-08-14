@@ -8,8 +8,9 @@
 <body>
     <h1>{{ title }} is working!</h1>
     {% for obj in object_list %}
-    {{ obj.title }}<br/>
+    <a href='{% url "detail" id=obj.id %}' >{{ obj.title }}</a><br/>
     {{ obj.content }}<br/>
+    {{ obj.updated_at }}<br/>
     {{ obj.updated_at }}<br/>
     {% endfor %}
 </body>

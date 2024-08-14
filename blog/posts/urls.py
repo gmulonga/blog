@@ -4,9 +4,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.post_detail, name='post_detail'),
-    path('detail/', views.post_list, name='post_list'),
-    path('create/', views.post_add, name='post_create'),
-    path('update/', views.post_update, name='post_update'),
-    path('delete/', views.post_delete, name='post_delete'),
+    path('', views.post_list, name='list'),
+    path('<int:id>/', views.post_detail, name='detail'),
+    path('create/', views.post_add, name='create'),
+    path('update/', views.post_update, name='update'),
+    path('delete/', views.post_delete, name='delete'),
 ]
